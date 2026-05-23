@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LE PAULA 萊珀樂 | 醫學級足部修護</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --gold-dark: #8A6A3A;
+    --ivory: #FAF8F4;
+    --ivory-dark: #F0EBE0;
+    --charcoal: #1A1714;
+    --charcoal-mid: #3D3830;
+    --charcoal-soft: #6B6259;
+    --white: #FFFFFF;
+    --accent-blue: #2C4A5E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--ivory);
+    color: var(--charcoal);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,169,110,0.2);
+    transition: all 0.3s;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--charcoal);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--charcoal-soft); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.6rem 1.6rem;
+    border: 1px solid var(--gold);
+    color: var(--gold); background: transparent;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.25s;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--white); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 4rem 6rem 5rem;
+    position: relative;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--gold-light);
+    padding: 0.4rem 1rem; margin-bottom: 2.5rem;
+    width: fit-content;
+  }
+  .hero-badge::before {
+    content: '✦'; font-size: 0.5rem;
+  }
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--charcoal); margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-h1 em {
+    font-style: italic; color: var(--gold);
+  }
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    font-weight: 300; font-style: italic;
+    color: var(--charcoal-soft); margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+  .hero-desc {
+    font-size: 0.88rem; line-height: 1.9;
+    color: var(--charcoal-soft); max-width: 440px;
+    margin-bottom: 3rem;
+  }
+  .hero-ctas {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn-primary {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 1rem 2.4rem;
+    background: var(--charcoal); color: var(--ivory);
+    border: 1px solid var(--charcoal);
+    cursor: pointer; text-decoration: none;
+    transition: all 0.25s; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+  .btn-outline {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 1rem 2.4rem;
+    background: transparent; color: var(--charcoal);
+    border: 1px solid rgba(26,23,20,0.3);
+    cursor: pointer; text-decoration: none;
+    transition: all 0.25s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(201,169,110,0.25);
+  }
+  .stat-item {}
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 400;
+    color: var(--charcoal); line-height: 1;
+  }
+  .stat-number sup {
+    font-size: 1rem; vertical-align: super;
+  }
+  .stat-label {
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--charcoal-soft); margin-top: 0.3rem;
+  }
+
+  .hero-right {
+    position: relative; overflow: hidden;
+    background: var(--ivory-dark);
+  }
+  .hero-image-placeholder {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #E8DFD0 0%, #D4C4A8 40%, #C2AD8A 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-image-placeholder::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(26,23,20,0) 45%, rgba(26,23,20,0.35) 100%);
+    pointer-events: none;
+  }
+  .asset-photo {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .hero-image-placeholder .asset-photo {
+    object-position: center;
+  }
+  .hero-product-card {
+    position: absolute; bottom: 3rem; left: -2rem;
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    border-left: 3px solid var(--gold);
+    max-width: 260px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    z-index: 2;
+  }
+  .product-card-label {
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.6rem;
+  }
+  .product-card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 500;
+    color: var(--charcoal); line-height: 1.3;
+    margin-bottom: 0.4rem;
+  }
+  .product-card-sub {
+    font-size: 0.72rem; color: var(--charcoal-soft);
+    line-height: 1.6;
+  }
+
+  /* ── SECTION COMMON ── */
+  section { position: relative; }
+  .section-label {
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300; line-height: 1.2;
+    color: var(--charcoal); margin-bottom: 1.2rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-desc {
+    font-size: 0.9rem; line-height: 1.9;
+    color: var(--charcoal-soft); max-width: 560px;
+  }
+  .divider-gold {
+    width: 3rem; height: 1px;
+    background: var(--gold); margin: 1.5rem 0;
+  }
+
+  /* ── PAIN POINTS ── */
+  .pain-section {
+    padding: 7rem 5rem;
+    background: var(--charcoal);
+    color: var(--ivory);
+  }
+  .pain-section .section-title {
+    color: var(--ivory); max-width: 600px;
+  }
+  .pain-section .section-desc {
+    color: rgba(250,248,244,0.65);
+  }
+  .pain-section .section-label {
+    color: var(--gold-light);
+  }
+  .pain-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; margin-top: 4rem;
+  }
+  .pain-card {
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .pain-card:hover {
+    background: rgba(201,169,110,0.1);
+    border-color: rgba(201,169,110,0.3);
+  }
+  .pain-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 300;
+    color: rgba(201,169,110,0.25); line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+  .pain-title {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em;
+    color: var(--ivory); margin-bottom: 0.8rem;
+  }
+  .pain-desc {
+    font-size: 0.82rem; line-height: 1.8;
+    color: rgba(250,248,244,0.55);
+  }
+
+  /* ── BRAND STORY ── */
+  .story-section {
+    padding: 8rem 5rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: center;
+  }
+  .story-image {
+    position: relative;
+  }
+  .story-image-main {
+    width: 100%; aspect-ratio: 4/5;
+    background: linear-gradient(160deg, #DDD0BC 0%, #C4B296 60%, #A8926E 100%);
+    position: relative; overflow: hidden;
+  }
+  .story-image-main::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(26,23,20,0) 55%, rgba(26,23,20,0.22) 100%);
+    pointer-events: none;
+  }
+  .story-image-main .asset-photo {
+    object-position: center top;
+  }
+  .story-image-overlay {
+    position: absolute; bottom: -2rem; right: -2rem;
+    width: 55%; aspect-ratio: 1;
+    background: var(--charcoal);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 2rem; text-align: center;
+  }
+  .story-image-overlay .big-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 300;
+    color: var(--gold); line-height: 1;
+  }
+  .story-image-overlay .big-label {
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(250,248,244,0.6); margin-top: 0.4rem;
+  }
+  .story-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-style: italic; font-weight: 300;
+    color: var(--charcoal-soft);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.5rem; margin: 2rem 0;
+    line-height: 1.7;
+  }
+
+  /* ── INNOVATION ── */
+  .innovation-section {
+    padding: 7rem 5rem;
+    background: var(--ivory-dark);
+  }
+  .innovation-header {
+    text-align: center; max-width: 700px; margin: 0 auto 5rem;
+  }
+  .innovation-header .section-desc {
+    margin: 0 auto;
+  }
+  .compare-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; max-width: 900px; margin: 0 auto 5rem;
+  }
+  .innovation-visual {
+    max-width: 1100px;
+    margin: -2rem auto 4rem;
+    border: 1px solid rgba(201,169,110,0.22);
+    background: var(--charcoal);
+    overflow: hidden;
+  }
+  .innovation-visual img {
+    width: 100%;
+    aspect-ratio: 1408 / 768;
+    object-fit: cover;
+    display: block;
+  }
+  .compare-card {
+    padding: 3rem;
+  }
+  .compare-card.bad {
+    background: rgba(26,23,20,0.04);
+    border: 1px solid rgba(26,23,20,0.08);
+  }
+  .compare-card.good {
+    background: var(--charcoal);
+    color: var(--ivory);
+  }
+  .compare-tag {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .compare-card.bad .compare-tag { color: var(--charcoal-soft); }
+  .compare-card.good .compare-tag { color: var(--gold); }
+  .compare-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; margin-bottom: 1.5rem;
+  }
+  .compare-card.bad .compare-title { color: var(--charcoal); }
+  .compare-card.good .compare-title { color: var(--ivory); }
+  .compare-list { list-style: none; }
+  .compare-list li {
+    font-size: 0.83rem; line-height: 1.7;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid;
+    display: flex; gap: 0.8rem; align-items: flex-start;
+  }
+  .compare-card.bad .compare-list li {
+    color: var(--charcoal-soft);
+    border-color: rgba(26,23,20,0.08);
+  }
+  .compare-card.good .compare-list li {
+    color: rgba(250,248,244,0.75);
+    border-color: rgba(255,255,255,0.08);
+  }
+  .compare-list li::before { flex-shrink: 0; margin-top: 2px; }
+  .compare-card.bad .compare-list li::before {
+    content: '✕'; color: #B04040; font-size: 0.7rem;
+  }
+  .compare-card.good .compare-list li::before {
+    content: '✦'; color: var(--gold); font-size: 0.6rem;
+  }
+
+  .tech-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 2rem;
+  }
+  .tech-card {
+    padding: 2rem;
+    border: 1px solid rgba(201,169,110,0.25);
+    background: var(--white);
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .tech-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+  .tech-icon {
+    width: 2.5rem; height: 2.5rem;
+    border: 1px solid var(--gold-light);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+  }
+  .tech-name {
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.05em; color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+  .tech-desc {
+    font-size: 0.78rem; line-height: 1.7;
+    color: var(--charcoal-soft);
+  }
+
+  /* ── INGREDIENTS ── */
+  .ingredients-section {
+    padding: 7rem 5rem;
+    background: var(--charcoal);
+    color: var(--ivory);
+  }
+  .ingredients-header {
+    max-width: 700px; margin-bottom: 4rem;
+  }
+  .ingredients-header .section-title { color: var(--ivory); }
+  .ingredients-header .section-desc { color: rgba(250,248,244,0.6); }
+  .ingredients-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+  }
+  .ingredients-showcase {
+    margin: 0 0 4rem;
+    border: 1px solid rgba(201,169,110,0.2);
+    overflow: hidden;
+    background: rgba(255,255,255,0.04);
+  }
+  .ingredients-showcase img {
+    width: 100%;
+    aspect-ratio: 1600 / 872;
+    object-fit: cover;
+    display: block;
+  }
+  .ingredient-item {
+    padding: 2.5rem;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.3s;
+  }
+  .ingredient-item:hover {
+    background: rgba(201,169,110,0.08);
+    border-color: rgba(201,169,110,0.2);
+  }
+  .ingredient-tag {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); background: rgba(201,169,110,0.1);
+    padding: 0.2rem 0.7rem; display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .ingredient-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 400;
+    color: var(--ivory); margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+  .ingredient-cn {
+    font-size: 0.72rem; color: rgba(250,248,244,0.4);
+    margin-bottom: 0.8rem; letter-spacing: 0.05em;
+  }
+  .ingredient-desc {
+    font-size: 0.8rem; line-height: 1.8;
+    color: rgba(250,248,244,0.55);
+  }
+
+  /* ── 4 PATENTS ── */
+  .patents-section {
+    padding: 7rem 5rem;
+    background: var(--ivory);
+  }
+  .patents-header {
+    text-align: center; max-width: 600px; margin: 0 auto 4rem;
+  }
+  .patents-header .section-desc { margin: 0 auto; }
+  .patents-list {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; max-width: 900px; margin: 0 auto;
+  }
+  .patent-card {
+    display: flex; gap: 1.5rem;
+    padding: 2rem 2.5rem;
+    background: var(--white);
+    border: 1px solid rgba(201,169,110,0.2);
+    transition: border-color 0.3s;
+  }
+  .patent-card:hover { border-color: var(--gold); }
+  .patent-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 300;
+    color: var(--gold-light); line-height: 1; flex-shrink: 0;
+  }
+  .patent-content {}
+  .patent-name {
+    font-size: 0.85rem; font-weight: 500;
+    color: var(--charcoal); margin-bottom: 0.5rem;
+  }
+  .patent-desc {
+    font-size: 0.8rem; line-height: 1.7;
+    color: var(--charcoal-soft);
+  }
+
+  /* ── 28 DAY ── */
+  .ritual-section {
+    padding: 7rem 5rem;
+    background: var(--ivory-dark);
+  }
+  .ritual-header {
+    text-align: center; max-width: 640px;
+    margin: 0 auto 5rem;
+  }
+  .ritual-header .section-desc { margin: 0 auto; }
+  .stats-bar {
+    display: flex; justify-content: center; gap: 5rem;
+    margin-bottom: 5rem; padding: 2.5rem;
+    background: var(--charcoal); max-width: 700px; margin: 0 auto 5rem;
+  }
+  .stats-bar-item { text-align: center; }
+  .stats-bar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 300; color: var(--gold);
+    line-height: 1;
+  }
+  .stats-bar-arrow {
+    font-size: 1rem; color: var(--gold-light); margin-left: 0.2rem;
+  }
+  .stats-bar-label {
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(250,248,244,0.5); margin-top: 0.4rem;
+  }
+  .weeks-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; margin-top: 3rem;
+  }
+  .week-card {
+    padding: 2.5rem 2rem;
+    background: var(--white);
+    border: 1px solid rgba(201,169,110,0.15);
+    position: relative; overflow: hidden;
+  }
+  .week-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--gold-light);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .week-card:hover::before { transform: scaleX(1); }
+  .week-tag {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 0.8rem;
+  }
+  .week-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 400;
+    color: var(--charcoal); margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .week-desc {
+    font-size: 0.78rem; line-height: 1.8;
+    color: var(--charcoal-soft);
+  }
+
+  /* ── FOUNDER ── */
+  .founder-section {
+    padding: 8rem 5rem;
+    background: var(--charcoal);
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    gap: 6rem; align-items: center;
+  }
+  .founder-image-wrap {
+    position: relative;
+  }
+  .founder-image {
+    width: 100%; aspect-ratio: 3/4;
+    background: linear-gradient(160deg, #3D3830 0%, #2A241E 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .founder-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(26,23,20,0) 55%, rgba(26,23,20,0.34) 100%);
+    pointer-events: none;
+  }
+  .founder-image .asset-photo {
+    object-position: center;
+  }
+  .founder-monogram {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem; font-weight: 300;
+    color: rgba(201,169,110,0.15); letter-spacing: -0.05em;
+    user-select: none;
+  }
+  .founder-badge {
+    position: absolute; bottom: -1.5rem; right: -1.5rem;
+    width: 120px; height: 120px;
+    background: var(--gold);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .founder-badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 300;
+    color: var(--charcoal); line-height: 1;
+  }
+  .founder-badge-text {
+    font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(26,23,20,0.7); margin-top: 0.2rem;
+  }
+  .founder-content .section-label { color: var(--gold-light); }
+  .founder-content .section-title { color: var(--ivory); }
+  .founder-content .section-desc { color: rgba(250,248,244,0.6); }
+  .founder-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-style: italic; font-weight: 300;
+    color: var(--gold-light); line-height: 1.7;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.5rem; margin: 2rem 0;
+  }
+  .founder-belief {
+    font-size: 0.85rem; line-height: 2; color: rgba(250,248,244,0.55);
+    margin-top: 1.5rem;
+  }
+
+  /* ── PRICING ── */
+  .pricing-section {
+    padding: 7rem 5rem;
+    background: var(--ivory);
+  }
+  .pricing-header {
+    text-align: center; max-width: 560px; margin: 0 auto 5rem;
+  }
+  .pricing-header .section-desc { margin: 0 auto; }
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+  }
+  .pricing-card {
+    padding: 2.5rem;
+    background: var(--white);
+    border: 1px solid rgba(201,169,110,0.2);
+    position: relative; display: flex; flex-direction: column;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .pricing-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+  }
+  .pricing-card.featured {
+    background: var(--charcoal);
+    border-color: var(--gold);
+    transform: scale(1.03);
+  }
+  .pricing-card.featured:hover {
+    transform: scale(1.03) translateY(-6px);
+  }
+  .pricing-badge {
+    position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+    font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    background: var(--gold); color: var(--charcoal);
+    padding: 0.3rem 1.2rem; white-space: nowrap;
+  }
+  .pricing-tier {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .pricing-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .pricing-card:not(.featured) .pricing-name { color: var(--charcoal); }
+  .pricing-card.featured .pricing-name { color: var(--ivory); }
+  .pricing-sub {
+    font-size: 0.78rem; line-height: 1.7; margin-bottom: 1.5rem;
+  }
+  .pricing-card:not(.featured) .pricing-sub { color: var(--charcoal-soft); }
+  .pricing-card.featured .pricing-sub { color: rgba(250,248,244,0.55); }
+  .pricing-price-wrap { margin-bottom: 1.5rem; }
+  .pricing-original {
+    font-size: 0.8rem; text-decoration: line-through;
+    color: var(--charcoal-soft); margin-bottom: 0.2rem;
+  }
+  .pricing-card.featured .pricing-original { color: rgba(250,248,244,0.35); }
+  .pricing-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 300;
+    color: var(--charcoal); line-height: 1;
+  }
+  .pricing-card.featured .pricing-price { color: var(--gold); }
+  .pricing-currency {
+    font-size: 1rem; vertical-align: super; margin-right: 0.1rem;
+  }
+  .pricing-features {
+    list-style: none; flex: 1; margin-bottom: 2rem;
+  }
+  .pricing-features li {
+    font-size: 0.8rem; line-height: 1.6;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid;
+    display: flex; gap: 0.7rem; align-items: flex-start;
+  }
+  .pricing-card:not(.featured) .pricing-features li {
+    color: var(--charcoal-soft);
+    border-color: rgba(26,23,20,0.07);
+  }
+  .pricing-card.featured .pricing-features li {
+    color: rgba(250,248,244,0.65);
+    border-color: rgba(255,255,255,0.07);
+  }
+  .pricing-features li::before {
+    content: '✦'; flex-shrink: 0; margin-top: 2px; font-size: 0.55rem;
+  }
+  .pricing-card:not(.featured) .pricing-features li::before { color: var(--gold); }
+  .pricing-card.featured .pricing-features li::before { color: var(--gold-light); }
+  .pricing-cta {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.9rem; text-align: center; cursor: pointer;
+    text-decoration: none; display: block;
+    transition: all 0.25s;
+  }
+  .pricing-card:not(.featured) .pricing-cta {
+    border: 1px solid var(--charcoal); color: var(--charcoal);
+    background: transparent;
+  }
+  .pricing-card:not(.featured) .pricing-cta:hover {
+    background: var(--charcoal); color: var(--ivory);
+  }
+  .pricing-card.featured .pricing-cta {
+    background: var(--gold); color: var(--charcoal); border: 1px solid var(--gold);
+  }
+  .pricing-card.featured .pricing-cta:hover {
+    background: var(--gold-dark); border-color: var(--gold-dark);
+    color: var(--ivory);
+  }
+  .pricing-footnote {
+    text-align: center; margin-top: 2.5rem;
+    font-size: 0.78rem; color: var(--charcoal-soft);
+  }
+
+  /* ── BLOG ── */
+  .blog-section {
+    padding: 7rem 5rem;
+    background: var(--ivory-dark);
+  }
+  .blog-header {
+    display: flex; align-items: flex-end;
+    justify-content: space-between; margin-bottom: 3.5rem;
+  }
+  .blog-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .blog-card {
+    background: var(--white);
+    border: 1px solid rgba(201,169,110,0.15);
+    overflow: hidden; transition: transform 0.3s;
+    cursor: pointer;
+  }
+  .blog-card:hover { transform: translateY(-4px); }
+  .blog-card-img {
+    height: 200px;
+    background: linear-gradient(135deg, #E0D5C2, #C8B99A);
+    position: relative; overflow: hidden;
+  }
+  .blog-card-img .asset-photo {
+    object-position: center;
+    transition: transform 0.4s ease;
+  }
+  .blog-card:hover .blog-card-img .asset-photo {
+    transform: scale(1.04);
+  }
+  .blog-card-img-accent {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem; font-weight: 300;
+    color: rgba(255,255,255,0.3);
+  }
+  .blog-card-body { padding: 1.5rem; }
+  .blog-card-cat {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.6rem;
+  }
+  .blog-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400;
+    color: var(--charcoal); line-height: 1.4;
+    margin-bottom: 0.8rem;
+  }
+  .blog-card-desc {
+    font-size: 0.78rem; line-height: 1.7;
+    color: var(--charcoal-soft);
+  }
+  .blog-card-read {
+    font-size: 0.7rem; color: var(--charcoal-soft);
+    margin-top: 1rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 5rem 5rem 3rem;
+    background: var(--charcoal);
+    color: rgba(250,248,244,0.5);
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 4rem; margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 300;
+    color: var(--ivory); letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  .footer-brand-desc {
+    font-size: 0.8rem; line-height: 1.8;
+    color: rgba(250,248,244,0.45);
+    max-width: 280px; margin-bottom: 1.5rem;
+  }
+  .footer-contact {
+    font-size: 0.78rem; line-height: 2;
+    color: rgba(250,248,244,0.5);
+  }
+  .footer-contact a { color: var(--gold-light); text-decoration: none; }
+  .footer-col-title {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(250,248,244,0.3); margin-bottom: 1.2rem;
+  }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 0.6rem; }
+  .footer-links a {
+    font-size: 0.8rem; color: rgba(250,248,244,0.5);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-copy {
+    font-size: 0.72rem; color: rgba(250,248,244,0.25);
+  }
+  .footer-legal { display: flex; gap: 2rem; }
+  .footer-legal a {
+    font-size: 0.72rem; color: rgba(250,248,244,0.25); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-legal a:hover { color: var(--gold-light); }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible {
+    opacity: 1; transform: translateY(0);
+  }
+  .fade-up-delay-1 { transition-delay: 0.1s; }
+  .fade-up-delay-2 { transition-delay: 0.2s; }
+  .fade-up-delay-3 { transition-delay: 0.3s; }
+  .fade-up-delay-4 { transition-delay: 0.4s; }
+  .fade-up-delay-5 { transition-delay: 0.5s; }
+
+  /* ── MOBILE RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 1.5rem 3rem; }
+    .hero-right { height: min(76vw, 520px); min-height: 320px; }
+    .hero-product-card { left: 1.5rem; right: 1.5rem; bottom: 1.5rem; max-width: none; }
+    .pain-section { padding: 5rem 1.5rem; }
+    .pain-grid { grid-template-columns: 1fr; }
+    .story-section { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
+    .innovation-section { padding: 5rem 1.5rem; }
+    .innovation-visual { margin: -1.5rem 0 3rem; }
+    .innovation-visual img { aspect-ratio: 4 / 3; object-position: center; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: 1fr; }
+    .ingredients-section { padding: 5rem 1.5rem; }
+    .ingredients-showcase img { aspect-ratio: 4 / 3; object-position: center; }
+    .ingredients-grid { grid-template-columns: 1fr 1fr; }
+    .patents-section { padding: 5rem 1.5rem; }
+    .patents-list { grid-template-columns: 1fr; }
+    .ritual-section { padding: 5rem 1.5rem; }
+    .weeks-grid { grid-template-columns: 1fr 1fr; }
+    .founder-section { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 3rem; }
+    .pricing-section { padding: 5rem 1.5rem; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-card.featured { transform: none; }
+    .blog-section { padding: 5rem 1.5rem; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    footer { padding: 3rem 1.5rem 2rem; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .hero-stats { gap: 2rem; flex-wrap: wrap; }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.72rem;
+      line-height: 1.24;
+    }
+    .hero-h1 {
+      font-size: 3rem;
+    }
+    .hero-badge {
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      padding: 0.4rem 0.75rem;
+    }
+    .compare-card,
+    .ingredient-item,
+    .patent-card,
+    .week-card,
+    .pricing-card {
+      padding: 2rem 1.5rem;
+    }
+    .ingredients-grid,
+    .weeks-grid,
+    .footer-top {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">LE PAULA</a>
+  <ul class="nav-links">
+    <li><a href="#story">品牌故事</a></li>
+    <li><a href="#innovation">創新科技</a></li>
+    <li><a href="#ingredients">黃金成分</a></li>
+    <li><a href="#ritual">28天旅程</a></li>
+    <li><a href="#pricing">立即選購</a></li>
+  </ul>
+  <a href="#pricing" class="nav-cta">選購套餐</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge fade-up">Cellular Level Home Spa · 香港美業25年實證</div>
+    <h1 class="hero-h1 fade-up fade-up-delay-1">
+      Silent<br><em>Elegance.</em><br>Enduring<br>Confidence.
+    </h1>
+    <p class="hero-tagline fade-up fade-up-delay-2">醫學級足部修護，在家重啟妳的柔嫩與自信</p>
+    <p class="hero-desc fade-up fade-up-delay-3">
+      源自香港25年高端沙龍一線臨床實戰。PDRN醫學級配方，6大黃金修復因子，4大國際專利技術——讓雙足享受與面部同等規格的奢華滋養。
+    </p>
+    <div class="hero-ctas fade-up fade-up-delay-4">
+      <a href="#pricing" class="btn-primary">開啟28天修護旅程</a>
+      <a href="#story" class="btn-outline">創辦人故事</a>
+    </div>
+    <div class="hero-stats fade-up fade-up-delay-5">
+      <div class="stat-item">
+        <div class="stat-number">25<sup>年</sup></div>
+        <div class="stat-label">香港美業實戰</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">9<sup>%</sup></div>
+        <div class="stat-label">黃金濃度尿素</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4<sup>大</sup></div>
+        <div class="stat-label">國際修復專利</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-image-placeholder">
+      <img class="asset-photo" src="PHOTO-2026-05-23-18-42-36 2.jpg" alt="LE PAULA 足部 Home Spa 產品與舒緩護理場景">
+    </div>
+    <div class="hero-product-card">
+      <div class="product-card-label">旗艦產品</div>
+      <div class="product-card-name">青花瓷百花鳥語<br>女神足膜</div>
+      <div class="product-card-sub">Regen 90™ PDRN Ultra-Sole · 6大黃金配方 · 28天細胞修護旅程</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain-section" id="pain">
+  <div class="section-label fade-up">The Silent Anxiety</div>
+  <h2 class="section-title fade-up fade-up-delay-1">
+    臉部保養了10個步驟，<br>卻在脫下鞋的瞬間露了怯？
+  </h2>
+  <p class="section-desc fade-up fade-up-delay-2">精緻的女性在外優雅無比，卻常在深夜看著粗糙、乾裂、甚至勾絲的雙足，感到一絲不妥協的落寞。雙足，值得與面部同等規格的奢華滋養。</p>
+  <div class="pain-grid">
+    <div class="pain-card fade-up fade-up-delay-1">
+      <div class="pain-number">01</div>
+      <div class="pain-title">高跟鞋後的乾裂與厚繭</div>
+      <div class="pain-desc">常年穿高跟鞋與步行摩擦，足底角質層過度增厚，形成頑固硬繭與疼痛乾裂。每一步都是無聲的委屈。</div>
+    </div>
+    <div class="pain-card fade-up fade-up-delay-2">
+      <div class="pain-number">02</div>
+      <div class="pain-title">精緻絲襪的「勾絲尷尬」</div>
+      <div class="pain-desc">粗糙的腳後跟輕易勾壞高級真絲睡衣或精緻絲襪，瞬間摧毀好不容易建立的精緻感。精緻，應該沒有盲點。</div>
+    </div>
+    <div class="pain-card fade-up fade-up-delay-3">
+      <div class="pain-number">03</div>
+      <div class="pain-title">沙龍常客的「無效保養」</div>
+      <div class="pain-desc">頻繁修腳、刮死皮，卻因缺乏細胞級屏障修護成分，死皮越長越快、肌膚越來越脆弱。治標不治本。</div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STORY -->
+<section class="story-section" id="story">
+  <div class="story-image fade-up">
+    <div class="story-image-main">
+      <img class="asset-photo" src="PHOTO-2026-05-23-18-42-36.jpg" alt="LE PAULA Regen 90 PDRN Ultra-Sole 產品禮盒">
+    </div>
+    <div class="story-image-overlay">
+      <div class="big-num">25</div>
+      <div class="big-label">年一線<br>美業實戰</div>
+    </div>
+  </div>
+  <div class="fade-up fade-up-delay-2">
+    <div class="section-label">Brand Story</div>
+    <h2 class="section-title">源自25年<br>沙龍的<em>溫暖承諾</em></h2>
+    <div class="divider-gold"></div>
+    <p class="section-desc">
+      作為一名在香港擁有25年一線美容沙龍經驗的創辦人，我每天都在沙龍的燈光下，親手護理過無數雙手腳。我見過太多因為繁忙的工作、沉重的家庭責任，而乾裂流血、長滿厚繭的雙足。
+    </p>
+    <blockquote class="story-quote">
+      「因為懂得，所以挑剔。既然市面上找不到，我決定自己研發。」
+    </blockquote>
+    <p class="section-desc">
+      許多女性在外精緻無比，卻在深夜脫下高跟鞋時，看著粗糙的雙腳感到一絲落寞。我帶領專業團隊走訪全球，引進10大進口原料與4大國際修復專利，將面部最頂級的抗衰因子注入足膜，調配出極致安全、具備強大修護力的 Home Spa 配方。
+    </p>
+    <p class="section-desc" style="margin-top:1rem;">
+      LE PAULA 不僅是腳膜——它是給雙足的頂級面部級醫美修護，更是送給所有在事業與家庭中優雅平衡的女性，一份不妥協的自我寵愛禮物。
+    </p>
+  </div>
+</section>
+
+<!-- INNOVATION -->
+<section class="innovation-section" id="innovation">
+  <div class="innovation-header fade-up">
+    <div class="section-label">The Innovation</div>
+    <h2 class="section-title">拒絕粗暴強酸脫皮<br>擁抱<em>細胞級柔嫩修護</em></h2>
+    <div class="divider-gold" style="margin:1.5rem auto;"></div>
+    <p class="section-desc">傳統腳膜依賴廉價強酸強行剝離角質，皮膚屏障受損後死皮反而越長越厚。LE PAULA 倡導「溫和軟化、深層修復」，重塑足部健康屏障，讓美麗從根源而來。</p>
+  </div>
+
+  <div class="innovation-visual fade-up fade-up-delay-1">
+    <img src="PHOTO-2026-05-23-18-42-37.jpg" alt="傳統塑膠腳膜與 LE PAULA 彈性水刺複合膜對比">
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card bad fade-up">
+      <div class="compare-tag">傳統脫皮足膜</div>
+      <div class="compare-title">強酸刺激・屏障受損</div>
+      <ul class="compare-list">
+        <li>高濃度水楊酸強行脫皮，過程長達一週</li>
+        <li>脫皮期間極不雅觀，公開場合尷尬</li>
+        <li>新生肌膚敏感易紅、乾裂反覆</li>
+        <li>塑膠套悶熱，汗水浸泡皮膚</li>
+        <li>治標不治本，死皮越長越快</li>
+      </ul>
+    </div>
+    <div class="compare-card good fade-up fade-up-delay-2">
+      <div class="compare-tag">LE PAULA 奢華足膜</div>
+      <div class="compare-title">溫和導入・細胞更新</div>
+      <ul class="compare-list">
+        <li>90,000ppm尿素溫和軟化，不脫皮不傷膚</li>
+        <li>透皮溫感技術，成分吸收率提升雙倍</li>
+        <li>PDRN細胞再生，屏障重建更強韌</li>
+        <li>3D彈性水刺複合膜，透氣不揮發精華</li>
+        <li>細胞級修護，效果持久不反彈</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tech-grid">
+    <div class="tech-card fade-up fade-up-delay-1">
+      <div class="tech-icon">膜</div>
+      <div class="tech-name">3D彈性水刺複合膜</div>
+      <div class="tech-desc">完美貼合腳踝與足弓，微孔透氣技術只透氣不揮發精華，告別傳統塑膠套悶癢不適，敷膜期間自由行走。</div>
+    </div>
+    <div class="tech-card fade-up fade-up-delay-2">
+      <div class="tech-icon">熱</div>
+      <div class="tech-name">VBE溫感熱能系統</div>
+      <div class="tech-desc">注入微熱循環配方，模擬沙龍熱石Spa溫感體驗，促進足部微循環，讓活性成分吸收效率倍增。</div>
+    </div>
+    <div class="tech-card fade-up fade-up-delay-3">
+      <div class="tech-icon">透</div>
+      <div class="tech-name">透皮多肽專利導入</div>
+      <div class="tech-desc">突破傳統角質屏障，將PDRN等活性修復因子精準導入基底層，實現真正意義上的細胞級深層修護。</div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section class="ingredients-section" id="ingredients">
+  <div class="ingredients-header fade-up">
+    <div class="section-label" style="color:var(--gold-light);">The Science of Repair</div>
+    <h2 class="section-title" style="color:var(--ivory);">用面部抗衰天花板配方<br><em>滋養雙足</em></h2>
+    <div class="divider-gold"></div>
+    <p class="section-desc" style="color:rgba(250,248,244,0.6);">LE PAULA首次將6大醫美級活性修護成分完美融合，帶來降維打擊般的絲滑蛻變。每一滴配方，都代表醫美級的最高質素。</p>
+  </div>
+  <div class="ingredients-showcase fade-up fade-up-delay-1">
+    <img src="PHOTO-2026-05-23-18-42-35.jpg" alt="LE PAULA PDRN 尿素與修護成分配方展示">
+  </div>
+  <div class="ingredients-grid">
+    <div class="ingredient-item fade-up fade-up-delay-1">
+      <div class="ingredient-tag">醫學級再生</div>
+      <div class="ingredient-name">PDRN</div>
+      <div class="ingredient-cn">鮭魚DNA細胞再生因子</div>
+      <div class="ingredient-desc">魚子精華活性因子，啟動細胞級深層再生與屏障重建，重啟肌膚自我修復機制，宛如肌底重生。</div>
+    </div>
+    <div class="ingredient-item fade-up fade-up-delay-2">
+      <div class="ingredient-tag">緊緻抗衰</div>
+      <div class="ingredient-name">Bosein 玻色因</div>
+      <div class="ingredient-cn">Pro-Xylane 抗衰王牌</div>
+      <div class="ingredient-desc">促進膠原合成，重塑底層肌膚彈性網絡，撫平足底歲月深紋，緊緻抗衰效果媲美頂級面部精華。</div>
+    </div>
+    <div class="ingredient-item fade-up fade-up-delay-3">
+      <div class="ingredient-tag">極致軟化</div>
+      <div class="ingredient-name">Urea 90,000ppm</div>
+      <div class="ingredient-cn">黃金濃度高純度尿素</div>
+      <div class="ingredient-desc">9%黃金濃度尿素，溫和精準軟化頑固厚繭，不強酸、不脫皮，讓角質自然代謝，安全不刺激。</div>
+    </div>
+    <div class="ingredient-item fade-up fade-up-delay-4">
+      <div class="ingredient-tag">彈性注入</div>
+      <div class="ingredient-name">Collagen III</div>
+      <div class="ingredient-cn">重組三型膠原蛋白</div>
+      <div class="ingredient-desc">高活性膠原蛋白直達肌底，修補乾裂纖維，重塑足底彈性屏障，重現嬰兒般飽滿柔軟雙足。</div>
+    </div>
+    <div class="ingredient-item fade-up fade-up-delay-5">
+      <div class="ingredient-tag">深度修護</div>
+      <div class="ingredient-name">Centella 積雪草</div>
+      <div class="ingredient-cn">複合植物抗敏提取物</div>
+      <div class="ingredient-desc">頂級舒緩植萃，即時修護龜裂，對抗外界摩擦與刺激，配合光果甘草根舒緩發紅乾癢。</div>
+    </div>
+    <div class="ingredient-item fade-up fade-up-delay-1">
+      <div class="ingredient-tag">極致抗氧</div>
+      <div class="ingredient-name">SOD 超抗氧化酶</div>
+      <div class="ingredient-cn">細胞級防禦系統</div>
+      <div class="ingredient-desc">中和自由基，對抗足部色素沉澱與老化，同時木瓜蛋白酶溫和代謝老廢角質，保持持久粉嫩。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 PATENTS -->
+<section class="patents-section" id="patents">
+  <div class="patents-header fade-up">
+    <div class="section-label">Clinical Science</div>
+    <h2 class="section-title">4大<em>國際修復專利</em></h2>
+    <div class="divider-gold" style="margin:1.5rem auto;"></div>
+    <p class="section-desc">走訪全球，搜羅頂級活性修復因子，以醫學級黃金配比，實現細胞級的再生與自愈。每一項專利，都是對品質的承諾。</p>
+  </div>
+  <div class="patents-list">
+    <div class="patent-card fade-up fade-up-delay-1">
+      <div class="patent-num">01</div>
+      <div class="patent-content">
+        <div class="patent-name">透皮多肽專利</div>
+        <div class="patent-desc">突破傳統角質屏障，將活性修復因子精準導入基底層，吸收率提升雙倍。真正送達肌底的細胞修護。</div>
+      </div>
+    </div>
+    <div class="patent-card fade-up fade-up-delay-2">
+      <div class="patent-num">02</div>
+      <div class="patent-content">
+        <div class="patent-name">重組三型膠原專利</div>
+        <div class="patent-desc">高活性膠原蛋白，修補乾裂纖維，重塑足底肌膚彈性屏障，讓雙足重現年輕飽滿的質感。</div>
+      </div>
+    </div>
+    <div class="patent-card fade-up fade-up-delay-3">
+      <div class="patent-num">03</div>
+      <div class="patent-content">
+        <div class="patent-name">煙酰胺亮白專利</div>
+        <div class="patent-desc">阻斷黑色素沉澱，改善足踝、關節暗沉，煥發粉嫩勻淨膚色。讓妳每一步都充滿自信。</div>
+      </div>
+    </div>
+    <div class="patent-card fade-up fade-up-delay-4">
+      <div class="patent-num">04</div>
+      <div class="patent-content">
+        <div class="patent-name">複合植物抗敏專利</div>
+        <div class="patent-desc">積雪草與光果甘草根提取物，即時舒緩發紅、乾癢，極致溫和不刺激，敏感肌亦可安心使用。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 28 DAY RITUAL -->
+<section class="ritual-section" id="ritual">
+  <div class="ritual-header fade-up">
+    <div class="section-label">28-Day Ritual</div>
+    <h2 class="section-title">遵循28天<br>細胞更新週期<br><em>見證雙足重生</em></h2>
+    <div class="divider-gold" style="margin:1.5rem auto;"></div>
+    <p class="section-desc">肌膚細胞代謝週期為28天。LE PAULA 拒絕即時化學假象，通過4個階段的漸進式修護，讓雙足徹底告別乾裂，重現初生般的柔嫩。</p>
+  </div>
+
+  <div class="stats-bar fade-up fade-up-delay-1">
+    <div class="stats-bar-item">
+      <div class="stats-bar-num">122%<span class="stats-bar-arrow">↑</span></div>
+      <div class="stats-bar-label">肌膚含水量提升</div>
+    </div>
+    <div class="stats-bar-item">
+      <div class="stats-bar-num">105%<span class="stats-bar-arrow">↑</span></div>
+      <div class="stats-bar-label">角質柔軟度提升</div>
+    </div>
+    <div class="stats-bar-item">
+      <div class="stats-bar-num">28<span style="font-size:1.5rem; color:rgba(201,169,110,0.6);">天</span></div>
+      <div class="stats-bar-label">完整修護週期</div>
+    </div>
+  </div>
+
+  <div class="weeks-grid">
+    <div class="week-card fade-up fade-up-delay-1">
+      <div class="week-tag">Week 1 · 軟化與導入</div>
+      <div class="week-title">溫和軟化角質</div>
+      <div class="week-desc">90,000ppm尿素迅速發揮作用，溫和軟化頑固厚繭與死皮，為後續活性成分的導入打開通道。發紅與乾癢開始消退。</div>
+    </div>
+    <div class="week-card fade-up fade-up-delay-2">
+      <div class="week-tag">Week 2 · 舒緩與修護</div>
+      <div class="week-title">修護龜裂屏障</div>
+      <div class="week-desc">積雪草與SOD深度舒緩，迅速修復腳後跟龜裂、發紅，減輕日常行走摩擦帶來的不適。足部觸感開始變得柔軟。</div>
+    </div>
+    <div class="week-card fade-up fade-up-delay-3">
+      <div class="week-tag">Week 3 · 啟動與更新</div>
+      <div class="week-title">細胞級深層再生</div>
+      <div class="week-desc">PDRN活性因子直達肌底，啟動受損細胞的自我更新與分裂，加速新生健康皮膚細胞生長。雙足開始煥發光澤。</div>
+    </div>
+    <div class="week-card fade-up fade-up-delay-4">
+      <div class="week-tag">Week 4 · 重塑與鎖水</div>
+      <div class="week-title">重現絲滑自信</div>
+      <div class="week-desc">玻色因與重組三型膠原全面鎖水，雙足肌膚彈性網重建完成。含水量提升122%，重現嬰兒般白嫩絲滑與緊緻。</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder-section" id="founder">
+  <div class="founder-image-wrap fade-up">
+    <div class="founder-image">
+      <img class="asset-photo" src="PHOTO-2026-05-23-18-42-35 2.jpg" alt="LE PAULA Home Me Time 足部護理儀式">
+    </div>
+    <div class="founder-badge">
+      <div class="founder-badge-num">25</div>
+      <div class="founder-badge-text">年美業<br>經驗</div>
+    </div>
+  </div>
+  <div class="founder-content fade-up fade-up-delay-2">
+    <div class="section-label">Founder's Belief</div>
+    <h2 class="section-title" style="color:var(--ivory);">創辦人<em>致詞</em></h2>
+    <div class="divider-gold"></div>
+    <p class="founder-belief">
+      在香港這座步履不停的城市裡，我們總是在奔跑。作為一名美業人，我在沙龍的燈光下，見過無數雙因忙碌而失去光澤、因摩擦而肥厚起繭的雙足。
+    </p>
+    <blockquote class="founder-quote">
+      「這20分鐘，請把時間還給自己。愛惜自己，才是終身浪漫的開始。」
+    </blockquote>
+    <p class="founder-belief">
+      我也是一個在事業與家庭之間努力尋找平衡的現代女性。我深深懂得那份「不容易」——我們把最好的愛給了老闆、給了客戶、給了孩子、給了伴侶，卻唯獨在精疲力竭的深夜，忽略了最值得被愛惜的自己。
+    </p>
+    <p class="founder-belief">
+      LE PAULA，是給雙足的頂級修護，更是送給妳自己的「我的時間」。當妳穿上 LE PAULA 足膜的那20分鐘，就是專屬於妳的奢華儀式。
+    </p>
+    <div style="margin-top:2.5rem;">
+      <a href="https://wa.me/85263869949" class="btn-outline" style="color:var(--gold-light); border-color:rgba(201,169,110,0.4);">
+        WhatsApp 美足顧問諮詢
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-header fade-up">
+    <div class="section-label">選購套餐</div>
+    <h2 class="section-title">開啟妳的<em>專屬 Home Spa</em></h2>
+    <div class="divider-gold" style="margin:1.5rem auto;"></div>
+    <p class="section-desc">全港免運費 · 順豐速遞 · VIP美足顧問一對一在線諮詢</p>
+  </div>
+  <div class="pricing-grid">
+
+    <div class="pricing-card fade-up fade-up-delay-1">
+      <div class="pricing-tier">初體驗</div>
+      <div class="pricing-name">深夜療癒體驗裝</div>
+      <div class="pricing-sub">適合初次體驗 LE PAULA 奢華足部Spa的精緻女性。20分鐘，卸下一整天的疲憊。</div>
+      <div class="pricing-price-wrap">
+        <div class="pricing-original">原價 HK$350</div>
+        <div class="pricing-price"><span class="pricing-currency">HK$</span>298</div>
+      </div>
+      <ul class="pricing-features">
+        <li>3片裝女神足膜</li>
+        <li>基礎細胞修護與深層補水</li>
+        <li>一對一美足顧問在線諮詢</li>
+        <li>全港免運費 · 順豐速遞</li>
+      </ul>
+      <a href="https://wa.me/85263869949" class="pricing-cta">立即選購</a>
+    </div>
+
+    <div class="pricing-card featured fade-up fade-up-delay-2">
+      <div class="pricing-badge">熱銷經典 · 28天完整療程</div>
+      <div class="pricing-tier">極致修復</div>
+      <div class="pricing-name">28天細胞再生<br>全效禮盒</div>
+      <div class="pricing-sub">完整遵循28天細胞更新週期。深層軟化厚繭，全面修復龜裂，重塑雙足初生般絲滑。</div>
+      <div class="pricing-price-wrap">
+        <div class="pricing-original">原價 HK$1,400</div>
+        <div class="pricing-price"><span class="pricing-currency">HK$</span>980</div>
+      </div>
+      <ul class="pricing-features">
+        <li>12片完整療程裝</li>
+        <li>贈 奢華香檳金足部按摩儀</li>
+        <li>VIP專屬美足顧問全程追蹤</li>
+        <li>全港免運費 · 順豐速遞</li>
+        <li>精美禮盒包裝</li>
+      </ul>
+      <a href="https://wa.me/85263869949" class="pricing-cta">立即選購</a>
+    </div>
+
+    <div class="pricing-card fade-up fade-up-delay-3">
+      <div class="pricing-tier">閨蜜 · 母親好禮</div>
+      <div class="pricing-name">奢寵分享裝<br>女神雙人禮盒</div>
+      <div class="pricing-sub">精緻青花瓷百花鳥語女神禮盒。送給閨蜜或母親，共同開啟優雅蛻變之旅。</div>
+      <div class="pricing-price-wrap">
+        <div class="pricing-original">原價 HK$2,800</div>
+        <div class="pricing-price"><span class="pricing-currency">HK$</span>1,780</div>
+      </div>
+      <ul class="pricing-features">
+        <li>24片雙人分享裝</li>
+        <li>贈 2個奢華香檳金足部按摩儀</li>
+        <li>雙人VIP專屬美足顧問服務</li>
+        <li>全港免運費 · 順豐速遞</li>
+        <li>尊貴禮盒包裝</li>
+      </ul>
+      <a href="https://wa.me/85263869949" class="pricing-cta">立即選購</a>
+    </div>
+  </div>
+  <p class="pricing-footnote fade-up">所有套餐均包含 VIP美足顧問服務 · WhatsApp: <a href="https://wa.me/85263869949" style="color:var(--gold);">+852 6386 9949</a> · 諮詢時間 每日 10:00–22:00</p>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section" id="hub">
+  <div class="blog-header">
+    <div>
+      <div class="section-label fade-up">Foot Care Hub</div>
+      <h2 class="section-title fade-up fade-up-delay-1">足部美學與<em>修護百科</em></h2>
+    </div>
+    <a href="#" class="btn-outline fade-up fade-up-delay-2" style="flex-shrink:0;">瀏覽全部文章</a>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card fade-up fade-up-delay-1">
+      <div class="blog-card-img">
+        <img class="asset-photo" src="PHOTO-2026-05-23-18-42-36 2.jpg" alt="LE PAULA 20分鐘足部 Home Spa">
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat">產業趨勢</div>
+        <div class="blog-card-title">為什麼只擦身體乳不夠？雙足的面部級醫美時代已來臨</div>
+        <div class="blog-card-desc">足部角質層是面部的數倍厚，普通乳霜根本無法滲透。PDRN與高濃度尿素的結合，正引領全球進入「雙足面部級護理」的新時代。</div>
+        <div class="blog-card-read">閱讀時間: 5 分鐘</div>
+      </div>
+    </div>
+    <div class="blog-card fade-up fade-up-delay-2">
+      <div class="blog-card-img">
+        <img class="asset-photo" src="PHOTO-2026-05-23-18-42-35.jpg" alt="LE PAULA PDRN 與高純度尿素黃金配方">
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat">產品知識</div>
+        <div class="blog-card-title">PDRN與90,000ppm尿素：LE PAULA的黃金修復密碼</div>
+        <div class="blog-card-desc">LE PAULA拒絕強酸脫皮。9%黃金濃度尿素配合PDRN細胞再生，重組三型膠原修護屏障——一場溫和安全且效果顯著的足部革命。</div>
+        <div class="blog-card-read">閱讀時間: 4 分鐘</div>
+      </div>
+    </div>
+    <div class="blog-card fade-up fade-up-delay-3">
+      <div class="blog-card-img">
+        <img class="asset-photo" src="PHOTO-2026-05-23-18-42-37.jpg" alt="傳統腳膜與 LE PAULA 足膜使用體驗比較">
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-cat">趣味百科</div>
+        <div class="blog-card-title">腳底死皮「越磨越厚」？香港25年沙龍專家的避坑指南</div>
+        <div class="blog-card-desc">用磨腳石瘋狂去死皮，反而向肌膚發出「防禦信號」，導致角質層代償性增厚。最科學的方法是VBE熱感循環與透皮灌注。</div>
+        <div class="blog-card-read">閱讀時間: 3 分鐘</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">LE PAULA</div>
+      <p class="footer-brand-desc">源自香港25年高端沙龍經驗，PDRN醫學級修復，全球頂級進口成分。給雙足不妥協的最高質素。</p>
+      <div class="footer-contact">
+        <div>客服 WhatsApp: <a href="https://wa.me/85263869949">+852 6386 9949</a></div>
+        <div>諮詢時間: 每日 10:00 – 22:00</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">導覽</div>
+      <ul class="footer-links">
+        <li><a href="#story">品牌故事</a></li>
+        <li><a href="#innovation">創新科技</a></li>
+        <li><a href="#ingredients">黃金成分</a></li>
+        <li><a href="#ritual">28天旅程</a></li>
+        <li><a href="#founder">創辦人</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">選購</div>
+      <ul class="footer-links">
+        <li><a href="#pricing">深夜療癒體驗裝</a></li>
+        <li><a href="#pricing">28天全效禮盒</a></li>
+        <li><a href="#pricing">奢寵分享裝</a></li>
+        <li><a href="#hub">美足百科</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">聯絡</div>
+      <ul class="footer-links">
+        <li><a href="https://wa.me/85263869949">WhatsApp諮詢</a></li>
+        <li><a href="#pricing">VIP美足顧問</a></li>
+        <li><a href="#">隱私政策</a></li>
+        <li><a href="#">服務條款</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 LE PAULA 萊珀樂. All Rights Reserved. 支持全港免運費 · 順豐速遞</div>
+    <div class="footer-legal">
+      <a href="#">隱私政策</a>
+      <a href="#">服務條款</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => {
+  observer.observe(el);
+});
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.style.boxShadow = '0 2px 30px rgba(0,0,0,0.08)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+});
+</script>
+</body>
+</html>
