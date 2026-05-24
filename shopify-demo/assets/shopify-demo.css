@@ -111,6 +111,45 @@ button, input, select {
   letter-spacing: 0.08em;
 }
 
+.lang-toggle {
+  height: 42px;
+  min-width: 76px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid rgba(190, 151, 87, 0.48);
+  background: rgba(255, 253, 248, 0.72);
+  color: rgba(10, 23, 36, 0.6);
+  cursor: pointer;
+  font-family: "Jost", "Noto Serif TC", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: transform 0.24s ease, border-color 0.24s ease, color 0.24s ease, background 0.24s ease;
+}
+
+.lang-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  color: var(--ink);
+  background: rgba(255, 253, 248, 0.94);
+}
+
+.lang-toggle [data-lang-option] {
+  opacity: 0.48;
+}
+
+.lang-toggle[data-current-lang="zh"] [data-lang-option="zh"],
+.lang-toggle[data-current-lang="en"] [data-lang-option="en"] {
+  opacity: 1;
+  color: var(--gold);
+}
+
+.lang-divider {
+  color: rgba(10, 23, 36, 0.26);
+}
+
 .nav-cta, .btn {
   min-height: 48px;
   display: inline-flex;
@@ -761,6 +800,8 @@ button, input, select {
   .brand { font-size: 21px; letter-spacing: 0.18em; }
   .brand span { display: none; }
   .nav { min-height: 68px; padding: 0 18px; }
+  .nav-actions { gap: 8px; }
+  .lang-toggle { min-width: 66px; height: 40px; font-size: 10px; gap: 5px; }
   .nav-cta { min-height: 42px; padding: 0 12px; font-size: 11px; letter-spacing: 0.08em; }
   .hero-copy { padding: 54px 22px; }
   .hero h1 { font-size: 50px; }
